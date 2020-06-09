@@ -33,7 +33,7 @@ var QWeb = core.qweb;
 
 ActionManager.include({
 	_handleAction: function (action) {
-        return this._super.apply(this, arguments).always($.proxy(this, '_hideMenusByAction', action));
+        return this._super.apply(this, arguments).then($.proxy(this, '_hideMenusByAction', action));
     },
     _hideMenusByAction: function (action) {
         var unique_selection = '[data-action-id=' + action.id + ']';

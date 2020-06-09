@@ -26,10 +26,15 @@
 
     <t t-extend="web.DropdownMenu">
 		<t t-jquery="button" t-operation="inner">
-	        <span t-att-class="widget.dropdownIcon"/> 
-	        <span class="mk_dropdown_text"><t t-esc="widget.dropdownTitle"/></span>
-	        <span t-if="widget.dropdownSymbol" t-att-class="widget.dropdownSymbol"/>
+	        <span t-att-class="widget.dropdownIcon"/>
+            <span class="mk_dropdown_text"><t t-esc="widget.dropdownTitle"/></span>
+            <span t-if="widget.dropdownSymbol" t-att-class="widget.dropdownSymbol"/>
 	    </t>
     </t>
-    
+
+    <t t-extend="base.Action">
+        <t t-jquery=".o_content" t-operation="attributes">
+            <attribute name="class"
+                       value="o_content mk_chatter_position_#{request.env.user.chatter_position or 'normal'}"/></t>
+    </t>
 </templates>

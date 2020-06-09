@@ -14,7 +14,8 @@
 .simplebar-wrapper {
     overflow: hidden;
     width: inherit;
-    height: inherit;
+    height: 0;
+    /*height: inherit;*/
     max-width: inherit;
     max-height: inherit;
 }

@@ -26,6 +26,7 @@
     overflow-y: auto;	
     top: $o-navbar-height;
     background-color: $mk-appbar-background;
+	scrollbar-width: none;
     .mk_apps_sidebar {
 	    padding: 0;
 	    white-space: nowrap;
@@ -70,7 +71,7 @@
 		.mk_apps_sidebar_panel {
 			width: $mk-sidebar-large-width;
 		}
-		.o_main {
+		.o_action_manager {
 			padding-left: $mk-sidebar-large-width;
 		}
 	}
@@ -84,7 +85,7 @@
 				margin-right: 0 !important;
 			}
 		}
-		.o_main {
+		.o_action_manager {
 			padding-left: $mk-sidebar-small-width;
 		}
 	}
@@ -106,7 +107,7 @@
 				margin-right: 0 !important;
 			}
 		}
-		.o_main {
+		.o_action_manager {
 			padding-left: $mk-sidebar-small-width;
 		}
 	}
@@ -121,7 +122,7 @@
 	.mk_apps_sidebar_panel {
 		display: none;
 	}
-	.o_main {
+	.o_action_manager {
 		padding-left: 0;
 	}
 }
@@ -130,7 +131,7 @@
 	.mk_apps_sidebar_panel {
 		display: none;
 	}
-	.o_main {
+	.o_action_manager {
 		padding-left: 0;
 	}
 }

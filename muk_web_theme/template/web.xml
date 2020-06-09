@@ -23,14 +23,38 @@
   -->
 
 <odoo>
-	
-	<template id="webclient_bootstrap" name="Web Client" inherit_id="web.webclient_bootstrap">
+
+    <template id="webclient_bootstrap" name="Web Client" inherit_id="web.webclient_bootstrap">
         <xpath expr="//t[@t-set='body_classname']" position="after">
-            <t t-set="body_classname" t-value="'o_web_client mk_sidebar_type_' + request.env.user.sidebar_type or 'large'"/>
-        </xpath>
-        <xpath expr="//*[hasclass('o_main')]" position="attributes">
-            <attribute name="t-attf-class">o_main mk_chatter_position_#{request.env.user.chatter_position or 'normal'}</attribute>
+            <t t-set="body_classname"
+               t-value="'o_web_client mk_sidebar_type_' + request.env.user.sidebar_type or 'large'"/>
+            <!--
+            <div id="app-sidebar" class="app-sidebar-panel">
+		    <div class="app-sidebar">
+                    <ul id="sidebar" class="app-sidebar-menu">
+                        <li class="nav-item"  t-as="menu" t-foreach="menu_data['children']" >
+                            <t t-set="debug_param" t-value="''"/>
+                            <a t-att-href="'/web%s#menu_id=%s&amp;action=' % (debug_param, menu['id'])"
+                               t-att-class="'nav-link nav-toggle' if menu.get('children') else 'nav-link '"
+                               t-att-data-menu="menu['id']"
+                               t-att-data-menu-xmlid="menu.get('xmlid')"
+                               t-att-data-action-model="menu['action'] and menu['action'].split(',')[0] or None"
+                               t-att-data-action-id="menu['action'] and menu['action'].split(',')[1] or None">
+                                <img t-attf-src="/web/image/ir.ui.menu/{{ menu['id'] }}/web_icon_data" t-att-alt="menu['name']" class="app-sidebar-menuitem" t-att-title="menu['name']"/>
+                                <span class="title" >
+                                    <t t-esc="menu['name']"/>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            -->
         </xpath>
     </template>
-	
+    <!--
+    <xpath expr="//*[hasclass('o_main')]" position="attributes">
+            <attribute name="t-attf-class">o_main mk_chatter_position_#{request.env.user.chatter_position or 'normal'}</attribute>
+        </xpath>
+        -->
 </odoo>
